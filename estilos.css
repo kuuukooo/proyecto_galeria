@@ -1,0 +1,39 @@
+.header {
+        text-align: left;
+        background: aqua;
+        color: white;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+      }
+.logo img {
+        max-width: 100px;
+        margin-right: 10px;     
+}
+.title {
+        flex: 1;
+}
+.image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+}
+.image-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-bottom: 100%;
+}
+.image-container img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+.image-container{
+        width: 100%;
+        padding-bottom: 75%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+}
