@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-require "../basededatos/basededatos.php";
+require "../database/database.php";
 
 $image = "";
 $description = $_POST['description'];
-date_default_timezone_set('Etc/GMT-4');
+date_default_timezone_set('Etc/GMT+4');
 $date = date('Y-m-d H:i:s');
 
 //Contamos la cantidad de imágenes que queremos publicar:
@@ -29,13 +29,13 @@ if($countfiles > 0){
 
         if(in_array($fileExtension, $allowedFileExtensions)){
             //directorio donde guardamos la imagen
-            $uploadFileDir = './assets/images/posts/';
+            $uploadFileDir = '../assets/images/posts/';
             $dest_path = $uploadFileDir . $newFileName;
 
             //comprimimos la imagen
             $calidad = 40;
             $originalImage = "";
-            if($fileExtension = 'png'){
+            if($fileExtension == 'png'){
                 $originalImage = imagecreatefrompng($fileTmpPath);
             }else{
                 $originalImage = imagecreatefromjpeg($fileTmpPath);
