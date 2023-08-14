@@ -1,6 +1,6 @@
 <?php
 
-require "./basededatos/basededatos.php";
+require "./database/database.php";
 $posts = array();
 $stmt = $conn->prepare("select * from posts");
 $stmt->execute();
