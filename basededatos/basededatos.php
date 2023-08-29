@@ -1,12 +1,16 @@
 <?php
-$server = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'proyecto_galeria';
+
+$server = '192.168.12.40';
+$username = 'XDD';
+$password = 'XDD';
+$database = 'galeria';
 
 try{
-    $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password); 
+    $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
+
 }catch(PDOException $e){
-    die('Conexion Fallida' . $e->getMessage());
+    die('Connection failed: ' . $e->getMessage());
 }
+
+
 ?>
