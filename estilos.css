@@ -1,11 +1,7 @@
-.header {
-        text-align: left;
-        background: aqua;
-        color: white;
-        font-size: 10px;
-        display: flex;
-        align-items: center;
-      }
+/* Barra de Inicio */
+.navbar {
+        background: linear-gradient(to right,skyblue, lightgreen);
+}
 .logo img {
         max-width: 100px;
         margin-right: 10px;     
@@ -37,11 +33,11 @@
         background-repeat: no-repeat;
         background-position: center center;
 }
-
-#lightSwitch {
-        transform: scale(1.8);
+/* Fuentes para la navbar */
+.navbar-brand, .nav-link, .d-flex {
+        font-family: 'Rubik', sans-serif;
 }
-      
+/* Fondos para el Switch de cambiado de fondo */
 .custom-theme.bg-light {
         background-color: rgb(0, 0, 0) !important;
         border-radius: 3px;
@@ -55,3 +51,26 @@
         color: dimgray;
         text-decoration: overline;
 }
+
+/* Mostrar el botón con texto "Publicar" en resoluciones mayores a 450x950 */
+@media (min-width: 451px) and (min-height <=951px) {
+        .btn-text {
+            display: block;
+        }
+      }
+      @media (min-width: 451px) or (min-height: 951px) {
+        .btn-icon {
+        display: none;
+        }
+      }
+      /* Mostrar el botón con ícono SVG en resoluciones menores o iguales a 450x950 */
+      @media (max-width: 450px) or (max-height: 950px) {
+        .btn-icon {
+            display: block;
+        }
+        
+        /* Ocultar el botón con texto "Publicar" */
+        .btn-text {
+            display: none;
+        }
+      }
