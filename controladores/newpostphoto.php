@@ -49,13 +49,13 @@ if($countfiles > 0){
 
     $imagesList = implode(",", $images);
 
-    $sql = 'INSERT INTO posts (images, description, date) VALUES (:images, :description, :date)';
+    $sql = 'INSERT INTO imagenes_sueltas (imagen, descripcion, fecha_carga) VALUES (:imagen, :descripcion, :fecha_carga)';
     $stmt = $conn->prepare($sql);
 
 
-    $stmt->bindParam(':images', $imagesList);
-    $stmt->bindParam(':description', $description);
-    $stmt->bindParam(':date', $date);
+    $stmt->bindParam(':imagen', $imagesList);
+    $stmt->bindParam(':descripcion', $description);
+    $stmt->bindParam(':fecha_carga', $date);
 
     if($stmt->execute()){
         $respuesta = "Post publicado correctamente";
